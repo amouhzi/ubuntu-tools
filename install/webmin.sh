@@ -9,4 +9,4 @@ echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/a
 
 apt-get update
 
-apt-get install webmin
+apt-get install -y webmin
