@@ -15,3 +15,9 @@ Webmin
 
 https://raw.github.com/anezi/ubuntu-tools/master/install/webmin.sh
 
+
+Locales
+=======
+
+locale-gen fr_BE.UTF-8
+dpkg-reconfigure locales
