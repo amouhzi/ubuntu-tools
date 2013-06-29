@@ -14,3 +14,9 @@ config.assets.manifest
   #config.action_controller.asset_host = "https://www.anezi.net"
 
 
+
+# Defaults to nil and saved in location specified by config.assets.prefix
+  # config.assets.manifest = YOUR_PATH
+  config.assets.prefix = '/git/assets'
+  
+  
