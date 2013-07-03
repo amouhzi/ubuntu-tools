@@ -1,4 +1,10 @@
-    
+64 bits
+-------
+  cd /tmp
+  wget sh.anezi.net/teamviewer64
+  sudo sh teamviewer64.sh
+
+
     Les NOUVEAUX paquets suivants seront installés :
       bluez-alsa:i386 gcc-4.7-base:i386 glib-networking:i386
       gstreamer0.10-plugins-base:i386 gstreamer0.10-plugins-good:i386
