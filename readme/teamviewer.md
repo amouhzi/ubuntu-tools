@@ -2,7 +2,7 @@
 -------
     cd /tmp
     wget sh.anezi.net/teamviewer64
-    sudo sh teamviewer64.sh
+    sudo sh teamviewer64
 
 Les paquets qui seront installés:
 
