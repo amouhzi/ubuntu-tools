@@ -84,4 +84,4 @@ Version 7:
 -------
     cd /tmp
     wget sh.anezi.net/teamviewer7_64
-    sudo sh teamviewer64
+    sudo sh teamviewer7_64
