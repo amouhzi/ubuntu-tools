@@ -1,3 +1,5 @@
+Latest version
+==============
 64 bits
 -------
     cd /tmp
@@ -75,4 +77,11 @@ Les paquets qui seront installés:
     0 mis à jour, 248 nouvellement installés, 0 à enlever et 1 non mis à jour.
     1 partiellement installés ou enlevés.
     Il est nécessaire de prendre 88,2 Mo dans les archives.
-    Après cette opération, 288 Mo d'espace disque supplémentaires seront utilisés.
+
+Version 7:
+==========
+64 bit:
+-------
+    cd /tmp
+    wget sh.anezi.net/teamviewer7_64
+    sudo sh teamviewer64
