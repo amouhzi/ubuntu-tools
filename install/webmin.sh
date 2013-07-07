@@ -13,6 +13,10 @@ echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/a
 echo "\nUpdating packages informations"
 apt-get update
 
+# Installation of webmin
+echo "\nInstallation of webmin"
 apt-get install -y webmin
 
+# Start the webmin service
+echo "\nStart the webmin service"
 service webmin start
