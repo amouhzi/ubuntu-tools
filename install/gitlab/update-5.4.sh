@@ -19,6 +19,11 @@ sudo -u git -H bundle install --without development test postgres --deployment
 sudo -u git -H bundle exec rake db:migrate RAILS_ENV=production
 sudo -u git -H bundle exec rake assets:precompile RAILS_ENV=production
 
+# Update Init script
+sudo rm /etc/init.d/gitlab
+sudo curl --output /etc/init.d/gitlab https://raw.github.com/gitlabhq/gitlabhq/5-4-stable/lib/support/init.d/gitlab
+sudo chmod +x /etc/init.d/gitlab
+
 # Start application
 sudo service gitlab start
 sudo service nginx restart
