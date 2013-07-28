@@ -10,7 +10,7 @@ echo "-----------------------------------------\n"
 
 cd /usr/share/webmin
 
-git clone git@github.com:anezi/nginx-webmin.git nginx
+git clone https://github.com/anezi/nginx-webmin.git nginx
 
 # Restart the webmin service
 echo "\nRestart the webmin service"
