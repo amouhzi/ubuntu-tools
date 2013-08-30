@@ -19,12 +19,12 @@ Important note
 You can only install supported applications.
 Supported application
 ---------------------
-* chromium => Chromium Browser with languages support.
-* oracle-java8
-* oraclejava6
-* teamviewer64 => Teamviewer 8 64bit (Latest)
-* teamviewer7_64 => Teamviewer 7 64bit
-* webmin
+* <code>chromium</code> => Chromium Browser with languages support.
+* <code>oracle-java8</code>
+* <code>oraclejava6</code>
+* <code>teamviewer64</code> => Teamviewer 8 64bit (Latest)
+* <code>teamviewer7_64</code> => Teamviewer 7 64bit
+* <code>webmin</code>
 
 Helps:
 
