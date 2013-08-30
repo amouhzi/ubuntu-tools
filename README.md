@@ -1,3 +1,5 @@
+Build status: BETA
+
 Anezi GET (aget)
 ================
 Anezi GET script helps you to install ubuntu application with one command line.
