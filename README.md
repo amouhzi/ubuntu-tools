@@ -25,7 +25,7 @@ Supported application
 * <code>oracle-java8</code>
 * <code>oraclejava6</code>
 * <code>teamviewer64</code> => Teamviewer 8 64bit (Latest)
-* <code>teamviewer7_64</code> => Teamviewer 7 64bit
+* <code>teamviewer7-amd64</code> => Teamviewer 7 64bit
 * <code>webmin</code>
 
 Helps:
