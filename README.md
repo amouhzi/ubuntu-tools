@@ -21,7 +21,7 @@ Supported application
 ---------------------
 * <code>chromium</code> => Chromium Browser with languages support.
 * <code>oracle-java8</code>
-* <code>oraclejava6</code>
+* <code>oracle-java-6</code>
 * <code>teamviewer64</code> => Teamviewer 8 64bit (Latest)
 * <code>teamviewer7-amd64</code> => Teamviewer 7 64bit
 * <code>webmin</code>
