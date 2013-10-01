@@ -12,4 +12,4 @@ if [ -z "$1" ]
     exit
 fi
 
-wget -O- sh.anezi.net/$1 | sudo bash -
+wget -q -O - sh.anezi.net/$1 | sudo bash -
