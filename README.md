@@ -23,7 +23,7 @@ Supported application
 * <code>lamp</code> => Apache2, MySql, PHP, Xdebug
 * <code>oracle-java8</code>
 * <code>oracle-java-6</code>
-* <code>teamviewer64</code> => Teamviewer 8 64bit (Latest)
+* <code>teamviewer-amd64</code> => Teamviewer 8 64bit (Latest)
 * <code>teamviewer7-amd64</code> => Teamviewer 7 64bit
 * <code>ubuntu-update</code> => Update apt-get and upgrade applications
 * <code>virtualbox</code> => Latest supported version of Oracle VirtualBox in Ubuntu
