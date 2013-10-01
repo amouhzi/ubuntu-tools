@@ -25,6 +25,7 @@ Supported application
 * <code>oracle-java-6</code>
 * <code>teamviewer64</code> => Teamviewer 8 64bit (Latest)
 * <code>teamviewer7-amd64</code> => Teamviewer 7 64bit
+* <code>virtualbox</code> => Latest supported version of Oracle VirtualBox in Ubuntu
 * <code>webmin</code>
 
 Helps:
