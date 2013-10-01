@@ -21,6 +21,7 @@ Supported application
 * <code>chromium</code> => Chromium Browser with languages support.
 * <code>composer</code> => Globally Install Composer
 * <code>lamp</code> => Apache2, MySql, PHP, Xdebug
+* <code>lamp-itk</code> => Apache2 with MPM ITK, MySql, PHP, Xdebug
 * <code>oracle-java8</code>
 * <code>oracle-java-6</code>
 * <code>teamviewer-amd64</code> => Teamviewer 8 64bit (Latest)
