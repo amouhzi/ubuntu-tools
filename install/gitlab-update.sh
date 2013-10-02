@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ask() {
-    read -p $1 -r
+    read -p "$1" -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
             return 1;
