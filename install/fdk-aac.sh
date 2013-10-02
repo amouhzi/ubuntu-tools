@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install -y autoconf build-essential
+sudo apt-get install -y autoconf libtool
 
 WUSER="www-data"
 WHOME="/var/www"
