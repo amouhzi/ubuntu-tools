@@ -11,7 +11,7 @@ Example: To install webmin, just use this command line:
 Installation
 ------------
 ```bash
-wget -q -O - sh.anezi.net/install-aget | sudo bash -
+wget -q -O - sh.anezi.net/aget-install | sudo bash -
 ```
 Important note
 --------------
