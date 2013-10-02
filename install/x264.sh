@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get install yasm
+
 WUSER="www-data"
 WHOME="/var/www"
 
