@@ -13,6 +13,7 @@ if [ -z "$1" ]
 fi
 
 cd /tmp
-wget -q sh.anezi.net/$1
+
+wget -q sh.anezi.net/$1 -O $1
 sh $1
 rm $1
