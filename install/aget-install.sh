@@ -7,6 +7,7 @@ if [ -f /usr/local/bin/aget ]
 then
     echo "OK."
     sudo chmod +x /usr/local/bin/aget
+    echo "You can now use aget to install or update applications."
 else
     echo "ERROR."
 fi
