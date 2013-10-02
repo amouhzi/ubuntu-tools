@@ -1,32 +1,28 @@
 #!/bin/bash
 
+function ask {
+    echo $1
+    read -n 1 -r
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+            return 1;
+    else
+            exit
+            echo "Abort.."
+    fi
+}
+
 cd /home/git/gitlab
 
 echo "Doing a backup, please wait ... "
 sudo -u git -H RAILS_ENV=production bundle exec rake gitlab:backup:create
 
-read -p "Continue? [Y/n] " res
-res=${res:-Y}
-res=$(echo $res | tr "[:upper:]" "[:lower:]")
-
-if test res != "y"
-then
-  echo "Exit."
-  exit
-fi
+ask "Continue? [y/N] "
 
 echo "Stop the gitlab server:"
 sudo service gitlab stop
 
-read -p "Continue? [Y/n] " res
-res=${res:-Y}
-res=$(echo $res | tr "[:upper:]" "[:lower:]")
-
-if test res != "y"
-then
-  echo "Exit."
-  exit
-fi
+ask "Continue? [y/N] "
 
 sudo -u git -H git pull
 
