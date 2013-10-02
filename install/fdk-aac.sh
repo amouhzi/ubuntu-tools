@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install yasm
+sudo apt-get install autoconf
 
 WUSER="www-data"
 WHOME="/var/www"
