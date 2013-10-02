@@ -1,8 +1,8 @@
 #!/bin/bash
 
 ask() {
-    read -p "$1" -r
-    if [[ $REPLY =~ ^[Yy]$ ]]
+    read -p "$1" REPLY
+    if test $REPLY =~ ^[Yy]$
     then
             return 1;
     else
