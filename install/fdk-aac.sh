@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install -y autoconf automake
+sudo apt-get install -y autoconf build-essential
 
 WUSER="www-data"
 WHOME="/var/www"
