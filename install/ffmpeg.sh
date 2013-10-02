@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo apt-get install -y libass-dev
+
 WUSER="www-data"
 WHOME="/var/www"
 
