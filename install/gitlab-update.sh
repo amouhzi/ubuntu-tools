@@ -2,7 +2,7 @@
 
 ask() {
     read -p "$1" REPLY
-    if test $REPLY =~ ^[Yy]$
+    if test $REPLY = "y"
     then
             return 1;
     else
