@@ -2,7 +2,7 @@
 
 cd /home/git/gitlab
 
-echo "Do a backup:"
+echo "Doing a backup, please wait ... "
 sudo -u git -H RAILS_ENV=production bundle exec rake gitlab:backup:create
 
 read -p "Continue? [Y/n] " res
