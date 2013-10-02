@@ -1,16 +1,20 @@
 #!/bin/bash
 
-cd /tmp
-mkdir fdk-aac
+sudo apt-get install yasm
+
+WUSER="www-data"
+WHOME="/var/www"
+
+cd $WHOME
+sudo -u $WHOME -H mkdir ffmpeg_sources
+
+cd ffmpeg_sources
+sudo -u $WUSER -H git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git
+
 cd fdk-aac
-wget https://github.com/mstorsjo/fdk-aac/archive/v0.1.2.zip
-unzip v0.1.2.zip
-cd fdk-aac-0.1.2
-autoreconf -fiv
-./configure
-make
-sudo make install
-make distclean
-cd ..
-cd ..
-rm -r fdk-aac
+sudo -u $WUSER -H autoreconf -fiv
+sudo -u $WUSER -H ./configure --prefix="$WHOME/ffmpeg_build" --disable-shared
+sudo -u $WUSER -H make
+sudo -u $WUSER -H make install
+sudo -u $WUSER -H make distclean
+
