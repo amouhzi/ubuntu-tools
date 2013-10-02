@@ -1,15 +1,23 @@
 #!/bin/bash
 
-cd /tmp
-git clone --depth 1 git://source.ffmpeg.org/ffmpeg
+WUSER="www-data"
+WHOME="/var/www"
+
+cd $WHOME
+sudo -u $WUSER -H mkdir ffmpeg_sources
+
+cd ffmpeg_sources
+
+sudo -u $WUSER -H git clone --depth 1 git://source.ffmpeg.org/ffmpeg
 cd ffmpeg
-PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+PKG_CONFIG_PATH="$WHOME/ffmpeg_build/lib/pkgconfig"
 export PKG_CONFIG_PATH
-./configure \
-  --extra-libs="-ldl" --enable-gpl --enable-libass --enable-libfdk-aac \
+sudo -u $WUSER -H ./configure --prefix="$WHOME/ffmpeg_build" \
+  --extra-cflags="-I$WHOME/ffmpeg_build/include" --extra-ldflags="-L$WHOME/ffmpeg_build/lib" \
+  --bindir="$WHOME/bin" --extra-libs="-ldl" --enable-gpl --enable-libass --enable-libfdk-aac \
   --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libvpx \
   --enable-libx264 --enable-nonfree --enable-x11grab
-make
-make install
-make distclean
-hash -r
+sudo -u $WUSER -H make
+sudo -u $WUSER -H make install
+sudo -u $WUSER -H make distclean
+sudo -u $WUSER -H hash -r
