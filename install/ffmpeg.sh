@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install -y libass-dev libtheora-dev
+sudo apt-get install -y libass-dev libtheora-dev libvorbis-dev
 
 WUSER="www-data"
 WHOME="/var/www"
