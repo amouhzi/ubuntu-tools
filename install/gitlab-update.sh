@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function ask {
+ask() {
     echo $1
     read -n 1 -r
     if [[ $REPLY =~ ^[Yy]$ ]]
