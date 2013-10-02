@@ -7,8 +7,9 @@ sudo -u git -H RAILS_ENV=production bundle exec rake gitlab:backup:create
 
 read -p "Continue? [Y/n] " res
 res=${res:-Y}
+res=${res,,}
 
-if test res != "Y" -a res != "y"
+if test res != "y"
 then
   echo "Exit."
   exit
@@ -19,8 +20,9 @@ sudo service gitlab stop
 
 read -p "Continue? [Y/n] " res
 res=${res:-Y}
+res=${res,,}
 
-if test res != "Y" -a res != "y"
+if test res != "y"
 then
   echo "Exit."
   exit
