@@ -1,7 +1,17 @@
 #!/bin/bash
 
 cd /home/git/gitlab
+
+echo "Do a backup:"
 sudo -u git -H RAILS_ENV=production bundle exec rake gitlab:backup:create
+
+read -p "Continue? Y/n" res
+res=${res:-Y}
+
+if test res ! = "Y" then
+  echo "Exit."
+  exit
+fi
 
 sudo service gitlab stop
 
