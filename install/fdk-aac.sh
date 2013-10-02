@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install -y autoconf
+sudo apt-get install -y autoconf automake
 
 WUSER="www-data"
 WHOME="/var/www"
