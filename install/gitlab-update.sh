@@ -46,7 +46,7 @@ echo "Restart nginx .. "
 
 sudo service nginx restart
 
-echo "Info: "
+echo "Getting environment informations, please wait .. "
 
 sudo -u git -H bundle exec rake gitlab:env:info RAILS_ENV=production
 
