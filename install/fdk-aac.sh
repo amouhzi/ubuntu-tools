@@ -6,7 +6,7 @@ WUSER="www-data"
 WHOME="/var/www"
 
 cd $WHOME
-sudo -u $WHOME -H mkdir ffmpeg_sources
+sudo -u $WUSER -H mkdir ffmpeg_sources
 
 cd ffmpeg_sources
 sudo -u $WUSER -H git clone --depth 1 git://github.com/mstorsjo/fdk-aac.git
