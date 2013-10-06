@@ -19,9 +19,8 @@ if test $REPLY = "y"
 then
     echo "Doing a backup, please wait ... "
     sudo -u git -H RAILS_ENV=production bundle exec rake gitlab:backup:create
+    ask "I think backup is finished. Continue? [y/N] "
 fi
-
-ask "Continue? [y/N] "
 
 echo "Get latest code"
 sudo -u git -H git pull
