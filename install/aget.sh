@@ -22,41 +22,59 @@ fi
 
 cd /tmp
 
-old="$IFS"
-IFS=":"
-set "$2"
-IFS="$old"
-
-echo "Program to install: '$0'"
-exit
-
-prog=$0
+# Remove program name from arguments list
 shift
 
-args=""
- 
+programs=""
+
 for i in $*
 do
-    args="$args $i"
+    programs="$programs $i"
 done
 
-echo -n "Trying to download $prog ... "
+for prog in $programs
+do
 
-wget -q sh.anezi.net/$prog -O $prog
+  old="$IFS"
+  IFS=":"
+  set "$prog"
+  IFS="$old"
+  
+  program=$0
+  
+  echo "Program to install: '$program'"
+  exit
+  
+  
+  shift
+  
+  args=""
+   
+  for i in $*
+  do
+      args="$args $i"
+  done
+  
+  echo -n "Trying to download $prog ... "
+  
+  wget -q sh.anezi.net/$prog -O $prog
+  
+  if [ ! -f "$prog" ]
+  then
+      echo "Fails!"
+      exit
+  fi
+  
+  echo "OK."
+  
+  echo "Executing $prog ... "
+  
+  sh $prog $args
+  
+  echo -n "Removing $prog ... "
+  rm $prog
+  echo "OK."
+  
+done
 
-if [ ! -f "$prog" ]
-then
-    echo "Fails!"
-    exit
-fi
-
-echo "OK."
-
-echo "Executing $prog ... "
-
-sh $prog $args
-
-echo -n "Removing $prog ... "
-rm $prog
-echo "OK."
 echo "Finish!"
