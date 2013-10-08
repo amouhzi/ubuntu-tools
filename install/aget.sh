@@ -23,7 +23,7 @@ fi
 cd /tmp
 
 # Remove program name from arguments list
-shift
+#shift
 
 programs=""
 
