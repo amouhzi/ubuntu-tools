@@ -40,9 +40,6 @@ do
   echo "Program to install: '$program'"
   exit
   
-  
-  shift
-  
   args=""
    
   for i in $*
