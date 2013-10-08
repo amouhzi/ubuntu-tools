@@ -27,6 +27,7 @@ IFS=":"
 set "$2"
 IFS="$old"
 
+echo "Program to install: '$0'"
 
 prog=$0
 shift
