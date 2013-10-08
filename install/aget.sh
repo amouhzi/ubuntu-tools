@@ -48,5 +48,11 @@ do
     args="$args $i"
 done
 
+echo "Executing $prog ... "
+
 sh $prog $args
+
+echo -n "Removing $prog ... "
 rm $prog
+echo "OK."
+echo "Finish!"
