@@ -16,7 +16,7 @@ cd /tmp
 
 prog=$1
 
-echo "Trying to download $prog ..."
+echo -n "Trying to download $prog ... "
 
 wget -q sh.anezi.net/$prog -O $prog
 
@@ -25,6 +25,8 @@ then
     echo "Fails!"
     exit
 fi
+
+echo "OK."
 
 old="$IFS"
 IFS=":"
