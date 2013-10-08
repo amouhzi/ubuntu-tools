@@ -1,5 +1,13 @@
 #!/bin/bash
 
+version=0.5
+vdate=2013-10-08
+
+echo
+echo "Anezi Get version $version date $vdate."
+echo "      Ubuntu applications installer."
+echo
+
 if [ $# -eq 0 ]
   then
     echo "No arguments supplied."
