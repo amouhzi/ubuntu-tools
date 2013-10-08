@@ -34,7 +34,6 @@ do
   old="$IFS"
   IFS=:
   set "$i"
-  IFS="$old"
   
   program=$1
   
@@ -50,6 +49,8 @@ do
   do
       args="$args $i"
   done
+  
+  IFS="$old"
   
   echo -n "Trying to download $prog ... "
   
