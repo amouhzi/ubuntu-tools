@@ -1,11 +1,40 @@
 #!/bin/bash
 
-sudo apt-get install -y yasm
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied."
+    exit
+fi
 
-WUSER="www-data"
-WHOME="/var/www"
+if [ $# -eq 1 ]
+  then
+    echo "Missing arguments."
+    exit
+fi
 
-cd $WHOME
+if [ -z "$1" ]
+  then
+    echo "No argument supplied."
+    exit
+fi
+
+if [ -z "$2" ]
+  then
+    echo "No argument supplied."
+    exit
+fi
+
+# Installing dependencies
+aget yasm
+
+WUSER="$1"
+WHOME="$2"
+
+if [ ! -d "$WHOME/ffmpeg_sources" ]; then
+  mkdir $WHOME/ffmpeg_sources
+fi
+
+cd $WHOME/ffmpeg_sources
 sudo -u $WUSER -H git clone --depth 1 git://git.videolan.org/x264.git
 
 cd x264
