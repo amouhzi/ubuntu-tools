@@ -27,8 +27,10 @@ cd /tmp
 
 programs=""
 
+echo "We will install: "
 for i in $*
 do
+  echo " - '$i'"
     programs="$programs $i"
 done
 
