@@ -22,7 +22,20 @@ fi
 
 cd /tmp
 
-prog=$1
+old="$IFS"
+IFS=":"
+set "$2"
+IFS="$old"
+
+prog=$0
+shift
+
+args=""
+ 
+for i in $*
+do
+    args="$args $i"
+done
 
 echo -n "Trying to download $prog ... "
 
@@ -35,18 +48,6 @@ then
 fi
 
 echo "OK."
-
-old="$IFS"
-IFS=":"
-set "$2"
-IFS="$old"
-
-args=""
- 
-for i in $*
-do
-    args="$args $i"
-done
 
 echo "Executing $prog ... "
 
