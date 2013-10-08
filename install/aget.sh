@@ -14,6 +14,21 @@ fi
 
 cd /tmp
 
-wget -q sh.anezi.net/$1 -O $1
-sh $1
-rm $1
+prog=$1
+
+wget -q sh.anezi.net/$prog -O $prog
+
+old="$IFS"
+IFS=":"
+set "$2"
+IFS="$old"
+
+args=""
+ 
+for i in $*
+do
+    args="$args $i"
+done
+
+sh $prog $args
+rm $prog
