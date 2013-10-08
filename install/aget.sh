@@ -27,7 +27,7 @@ IFS=":"
 set "$2"
 IFS="$old"
 
-prog=$0
+prog=$1
 shift
 
 args=""
