@@ -9,34 +9,31 @@ echo "      Ubuntu applications installer."
 echo
 
 if [ $# -eq 0 ]
-  then
-    echo "No arguments supplied."
-    exit
+then
+  echo "No arguments supplied."
+  exit
 fi
 
 if [ -z "$1" ]
-  then
-    echo "No argument supplied."
-    exit
+then
+  echo "No argument supplied."
+  exit
 fi
 
 cd /tmp
-
-programs=""
 
 echo "We will install: (program:arg1:arg2:....)"
 for i in $*
 do
   echo " - '$i'"
-    programs="$programs $i"
 done
 
-for prog in $programs
+for i in $*
 do
 
   old="$IFS"
   IFS=":"
-  set "$prog"
+  set "$i"
   IFS="$old"
   
   program=$1
