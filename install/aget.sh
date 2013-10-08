@@ -22,13 +22,14 @@ fi
 
 cd /tmp
 
+prog=$1
+
 old="$IFS"
 IFS=":"
 set "$2"
 IFS="$old"
 
-prog=$1
-shift
+
 
 args=""
  
