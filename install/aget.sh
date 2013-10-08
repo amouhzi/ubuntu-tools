@@ -32,7 +32,7 @@ for i in $*
 do
 
   old="$IFS"
-  IFS=":"
+  IFS=:
   set "$i"
   IFS="$old"
   
