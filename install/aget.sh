@@ -22,12 +22,9 @@ fi
 
 cd /tmp
 
-# Remove program name from arguments list
-#shift
-
 programs=""
 
-echo "We will install: "
+echo "We will install: (program:arg1:arg2:....)"
 for i in $*
 do
   echo " - '$i'"
@@ -42,7 +39,7 @@ do
   set "$prog"
   IFS="$old"
   
-  program=$0
+  program=$1
   
   echo "Program to install: '$program'"
   exit
