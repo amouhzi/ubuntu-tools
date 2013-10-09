@@ -1,9 +1,38 @@
 #!/bin/bash
 
-sudo apt-get install -y autoconf libtool
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied."
+    exit
+fi
 
-WUSER="www-data"
-WHOME="/var/www"
+if [ $# -eq 1 ]
+  then
+    echo "Missing arguments."
+    exit
+fi
+
+if [ -z "$1" ]
+  then
+    echo "No argument supplied."
+    exit
+fi
+
+if [ -z "$2" ]
+  then
+    echo "No argument supplied."
+    exit
+fi
+
+WUSER="$1"
+WHOME="$2"
+
+if [ ! -d "$WHOME/ffmpeg_sources" ]; then
+  mkdir $WHOME/ffmpeg_sources
+fi
+
+# Installing dependencies
+sudo apt-get install -y autoconf libtool
 
 cd $WHOME
 sudo -u $WUSER -H mkdir ffmpeg_sources
