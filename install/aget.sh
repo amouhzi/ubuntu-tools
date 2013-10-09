@@ -38,7 +38,7 @@ do
   program=$1
   
   echo "Program to install: '$program'"
-  exit
+  continue
   
   args=""
    
