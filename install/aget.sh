@@ -54,7 +54,7 @@ do
   
   echo -n "Trying to download $program ... "
   
-  wget -q sh.anezi.net/$prog -O $prog
+  wget -q "sh.anezi.net/$program" -O "$program"
   
   if [ ! -f "$program" ]
   then
@@ -66,10 +66,10 @@ do
   
   echo "Executing $program ... "
   
-  sh $prog $args
+  sh "$program$args"
   
   echo -n "Removing $program ... "
-  rm $prog
+  rm $program
   echo "OK."
   
 done
