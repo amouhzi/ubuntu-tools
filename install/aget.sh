@@ -1,7 +1,7 @@
 #!/bin/bash
 
-version=0.5
-vdate=2013-10-08
+version=0.6
+vdate=2013-10-09
 
 echo
 echo "Anezi Get version $version date $vdate."
@@ -40,7 +40,9 @@ do
   echo "Program to install: '$program'"
   
   args=""
-   
+  
+  shift
+  
   for i in $*
   do
       args="$args $i"
