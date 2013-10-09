@@ -66,7 +66,7 @@ do
   
   echo "Executing $program ... "
   
-  output=`sh "$program$args"`
+  output=`sh $program$args`
   echo $output
   
   echo -n "Removing $program ... "
