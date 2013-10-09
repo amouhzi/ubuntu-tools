@@ -38,7 +38,6 @@ do
   program=$1
   
   echo "Program to install: '$program'"
-  continue
   
   args=""
    
@@ -46,6 +45,10 @@ do
   do
       args="$args $i"
   done
+  
+  echo "Arguments: '$args'"
+  
+  continue
   
   IFS="$old"
   
