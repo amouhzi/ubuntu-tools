@@ -50,15 +50,13 @@ do
   
   echo "Arguments: '$args'"
   
-  continue
-  
   IFS="$old"
   
-  echo -n "Trying to download $prog ... "
+  echo -n "Trying to download $program ... "
   
   wget -q sh.anezi.net/$prog -O $prog
   
-  if [ ! -f "$prog" ]
+  if [ ! -f "$program" ]
   then
       echo "Fails!"
       exit
@@ -66,11 +64,11 @@ do
   
   echo "OK."
   
-  echo "Executing $prog ... "
+  echo "Executing $program ... "
   
   sh $prog $args
   
-  echo -n "Removing $prog ... "
+  echo -n "Removing $program ... "
   rm $prog
   echo "OK."
   
