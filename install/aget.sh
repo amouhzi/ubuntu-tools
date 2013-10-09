@@ -31,9 +31,9 @@ done
 for i in $*
 do
 
-  old="$IFS"
-  IFS=:
-  set "$i"
+  old=$IFS
+  IFS=":"
+  set $i
   
   program=$1
   
