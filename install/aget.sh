@@ -66,8 +66,10 @@ do
   
   echo "Executing $program ... "
   
-  output=`sh $program$args`
-  echo $output
+  echo "#!/bin/bash" > "$program.sh"
+  echo "sh $program$args" >> "$program.sh"
+  sh "$program.sh"
+  rm "$program.sh"
   
   echo -n "Removing $program ... "
   rm $program
