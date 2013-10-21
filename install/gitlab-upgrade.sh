@@ -13,19 +13,14 @@ ask() {
 
 cd /home/git/gitlab
 
-echo "Doing a backup, please wait ... "
-sudo -u git -H RAILS_ENV=production bundle exec rake gitlab:backup:create
-
-ask "Continue? [y/N] "
-
-echo "Stop the gitlab server:"
-sudo service gitlab stop
-
-ask "Continue? [y/N] "
+read -p "Do you want to do a backup? [y/N] " REPLY
+if test $REPLY = "y"
+then
+    echo "please wait ... "
+    sudo -u git -H RAILS_ENV=production bundle exec rake gitlab:backup:create
+fi
 
 echo "Commit your changes:"
-
-cd /home/git/gitlab
 sudo -u git -H git commit -m "My changes"
 
 echo "Get latest code"
@@ -33,9 +28,11 @@ echo "Get latest code"
 sudo -u git -H git fetch
 sudo -u git -H git checkout 6-2-stable
 
+echo "Add support for lograte for better log file handling"
+sudo apt-get install logrotate
+
 echo "If you are using a relative url, you need to update application.rb"
 read -p "Do you want to update it? [y/N] " REPLY
-
 if test $REPLY = "y"
 then
   echo "To start editing file push on i"
@@ -43,11 +40,11 @@ then
   sudo -u git -H vim config/application.rb
 fi
 
-echo "Update gitlab-shell"
+#echo "Update gitlab-shell"
 
-cd /home/git/gitlab-shell
-sudo -u git -H git fetch
-sudo -u git -H git checkout v1.7.1
+#cd /home/git/gitlab-shell
+#sudo -u git -H git fetch
+#sudo -u git -H git checkout v1.7.1
 
 cd /home/git/gitlab
 
@@ -69,8 +66,8 @@ fi
 echo "Migrate database"
 sudo -u git -H bundle exec rake db:migrate RAILS_ENV=production
 
-echo "Migrate iids"
-sudo -u git -H bundle exec rake migrate_iids RAILS_ENV=production
+#echo "Migrate iids"
+#sudo -u git -H bundle exec rake migrate_iids RAILS_ENV=production
 
 read -p "Need to recompile assets? [y/N] " REPLY
 
@@ -82,6 +79,9 @@ then
     sudo -u git -H bundle exec rake cache:clear RAILS_ENV=production
     
 fi
+
+echo "What changed in gitlab.yml.example in this release:"
+git diff 6-1-stable:config/gitlab.yml.example 6-2-stable:config/gitlab.yml.example
 
 read -p "Do you need to update gitlab.yml? [y/N] " REPLY
 
@@ -109,18 +109,21 @@ echo "To start editing file push on i"
 echo "To quit and save changes, push on ESC, then :wq"
 sudo -u git -H vim config/application.rb
 
+echo "Set up logrotate"
+sudo cp lib/support/logrotate/gitlab /etc/logrotate.d/gitlab
+
 echo "Update Init script"
 sudo rm /etc/init.d/gitlab
 sudo curl --output /etc/init.d/gitlab https://raw.github.com/gitlabhq/gitlabhq/6-2-stable/lib/support/init.d/gitlab
 sudo chmod +x /etc/init.d/gitlab
 
-echo "Start gitlab server .. "
+echo "Restart gitlab server .. "
 
-sudo service gitlab start
+sudo service gitlab restart
 
-echo "Restart nginx .. "
+#echo "Restart nginx .. "
 
-sudo service nginx restart
+#sudo service nginx restart
 
 echo "Getting environment informations, please wait .. "
 
