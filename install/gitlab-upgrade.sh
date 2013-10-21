@@ -21,6 +21,7 @@ then
 fi
 
 echo "Commit your changes:"
+sudo -u git -H git add config/application.rb
 sudo -u git -H git commit -m "My changes"
 
 echo "Get latest code"
