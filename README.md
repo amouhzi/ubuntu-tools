@@ -26,7 +26,7 @@ Supported application
 * <code>lamp-itk</code>          => Apache2 with MPM ITK, MySql, PHP, Xdebug.
 * <code>libmp3lame</code>        => MP3 audio encoder.
 * <code>oracle-java8</code>
-* <code>oracle-java-6</code>
+* <code>oracle-java-6</code>     => Oracle Java 6
 * <code>teamviewer-amd64</code>  => Teamviewer 8 64bit (Latest).
 * <code>teamviewer7-amd64</code> => Teamviewer 7 64bit.
 * <code>ubuntu-update</code>     => Update apt-get and upgrade applications.
