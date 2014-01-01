@@ -9,7 +9,7 @@ cd /tmp
 wget http://www.webmin.com/jcameron-key.asc
 cat jcameron-key.asc | sudo apt-key add -
 
-sudo echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list
+sudo -u root -H echo "deb http://download.webmin.com/download/repository sarge contrib" > /etc/apt/sources.list.d/webmin.list
 
 # Updating packages informations
 echo "\nUpdating packages informations"
