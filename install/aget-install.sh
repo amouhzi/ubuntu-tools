@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo -n "Download of aget script ... "
-sudo wget -q sh.anezi.net/aget -O /usr/local/bin/aget
+sudo wget -q https://raw.githubusercontent.com/amouhzi/ubuntu-tools/master/install/aget -O /usr/local/bin/aget
 
 if [ -f /usr/local/bin/aget ]
 then
